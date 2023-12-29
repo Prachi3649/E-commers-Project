@@ -40,10 +40,12 @@ https://documenter.getpostman.com/view/29908963/2s9YkuaeP1
 
 ```
 
-# Deploy API end point 
+# Deploye API End Point in Vercel
 ```bash
-e-commers-project-6yn3-eevcn9fn7-prachi3649s-projects.vercel.app
+e-commers-project-m36ai6h1h-prachi3649s-projects.vercel.app
 ```
+
+
 # Note :- Don't delete this user Id from the DataBase 
 
 - Admin login credentials :-
@@ -60,11 +62,11 @@ e-commers-project-6yn3-eevcn9fn7-prachi3649s-projects.vercel.app
 ```
         
 # Customer login credentials :-
--   userId = 658bcd86f94d9657c973c8e9  // this is customer id
+-   userId = 658c533941d730477b31529b  // this is customer id
 ```bash
 {
-    _id: 658bcd86f94d9657c973c8e9
-  "userName": "Sagarsss",
+    _id: 658c533941d730477b31529b
+  "userName": "Sagar",
  "email": "prachi1731058@akgec.ac.in",
   "password": "dhjizs1@aditi",
   "address": " 13/17 colonel ganj kanpur"
