@@ -1,0 +1,1575 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": " NodeJS API project to demonstrate Swagger ",
+        "version": "1.0.0",
+        "title": "E-commers Project API"
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost:7065",
+    "basePath": "/api/v1",
+    "paths": {
+
+        "/register/user": {
+            "post": {
+                "summary": "Register User",
+                "description": "Create the User ",
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": true,
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "User",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "userName": {
+                                    "type": "string",
+                                    "example": "Aditi"
+                                },
+                                "email": {
+                                    "type": "String",
+                                    "example": "aditi@gamil.com"
+                                },
+    
+                                "password": {
+                                    "type": "String",
+                                    "example": "dhjizs1"
+                                },
+    
+                                "address": {
+                                    "type": "Number",
+                                    "example": "kanpur"
+                                }
+                            }
+                        }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/registerResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/login/user": {
+            "post": {
+                "summary": "Login User",
+                "description": "login ",
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": true,
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "User",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "email": {
+                                    "type": "String",
+                                    "example": "aditi@gamil.com"
+                                },
+                                "password": {
+                                    "type": "String",
+                                    "example": "aditi2459s"
+                                }
+                            }
+                        }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/loginResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/get/user/{user_Id}": {
+            "get": {
+                "summary": "Get user",
+                "description": "Get user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_id ",
+                        "required": true,
+                        "type": "string"
+                    }, 
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/registerResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/update/user/{user_Id}": {
+            "put": {
+                "summary": "Update user",
+                "description": "Update user ",
+                "produces": [
+                    "application/json"
+                ], 
+                "consumes": ["application/json"],
+                "requestBody": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "user_Id",
+                        "description": "user_id",
+                        "required": true,
+                        "type": "string"
+                     
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateData",
+                        "in": "body",
+                        "description": " body ",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "userName": {
+                                    "type": "string",
+                                    "example": "mobile"
+                                },
+                                "email": {
+                                    "type": "String",
+                                    "example": "Good"
+                                },
+
+                                "address": {
+                                    "type": "String",
+                                    "example": "tab"
+                                }
+                            }                        
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/registerResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/delete/user/{user_Id}": {
+            "delete": {
+                "summary": "Delete user",
+                "description": "Delete user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_id ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/deleteResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/add-product/product": {
+            "post": {
+                "summary": "Save the Product",
+                "description": "Create the Product ",
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": true,
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Product object",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "product_Name": {
+                                    "type": "string",
+                                    "example": "mobile"
+                                },
+                                "description": {
+                                    "type": "String",
+                                    "example": "Good"
+                                },
+
+                                "category": {
+                                    "type": "String",
+                                    "example": "tab"
+                                },
+
+                                "price": {
+                                    "type": "Number",
+                                    "example": "7600"
+                                },
+
+                                "stock": {
+                                    "type": "Number",
+                                    "example": "80"
+                                },
+                            
+                                "image_URL": {
+                                    "type": "String",
+                                    "example": "mobile"
+                                }
+                            }
+                        }
+                },
+                    
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "description": "token",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+                "responses": {
+                    "201": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/productResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/product/get-all-product": {
+            "get": {
+                "summary": "Get All  Product",
+                "description": "Get All  Product !!!",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    
+                    {
+                        "name": "product_Name",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": false,
+                        "type": "number"
+                    },
+                    {
+                        "name": "stock",
+                        "in": "query",
+                        "required": false,
+                        "type": "number"
+                    },
+                    {
+                        "name": "image_URL",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/productResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/product/get-product/{product_Id}": {
+            "get": {
+                "summary": "Get One Session",
+                "description": "Get One Session",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "product_Id",
+                        "in": "path",
+                        "description": "product_Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/productResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/product/update-product/{product_Id}": {
+            "put": {
+                "summary": "Update the Product",
+                "description": "Update the Product ",
+                "produces": [
+                    "application/json"
+                ], 
+                "consumes": ["application/json"],
+                "requestBody": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "product_Id",
+                        "description": "Product_Id",
+                        "required": true,
+                        "type": "string"
+                     
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateData",
+                        "in": "body",
+                        "description": " body ",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "product_Name": {
+                                    "type": "string",
+                                    "example": "mobile"
+                                },
+                                "description": {
+                                    "type": "String",
+                                    "example": "Good"
+                                },
+
+                                "category": {
+                                    "type": "String",
+                                    "example": "tab"
+                                },
+
+                                "price": {
+                                    "type": "Number",
+                                    "example": "7600"
+                                },
+
+                                "stock": {
+                                    "type": "Number",
+                                    "example": "80"
+                                },
+                            
+                                "image_URL": {
+                                    "type": "String",
+                                    "example": "mobile"
+                                }
+                            }                        
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/productResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/product/delete-product/{product_Id}": {
+            "delete": {
+                "summary": "Delete the product",
+                "description": "Delete the product",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "product_Id",
+                        "in": "path",
+                        "description": "product_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/deleteResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/create/order/add-order/{user_Id}": {
+            "post": {
+                "summary": "Save the Order",
+                "description": "Create the Order ",
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": true,
+                "parameters": [ 
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Order body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productId": {
+                                    "type": "string",
+                                    "example": "656597a9a08d38ee8ada8f23"
+                                },
+                                "quantity": {
+                                    "type": "number"
+                                },
+                                "shipping_address": {
+                                    "type": "string",
+                                    "example": "logo"
+                                }
+                            }
+                        }
+                    } ,   
+                    {
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/orderResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/order/get-all-order": {
+            "get": {
+                "summary": "Get All  Order",
+                "description": "Get All  Order !!!",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/orderResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/order/get-order/{order_Id}/{user_Id}": {
+            "get": {
+                "summary": "Get the Order",
+                "description": "Get the Order",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "order_Id",
+                        "in": "path",
+                        "description": "order_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/orderResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        }, 
+
+        "/order/get-total_Product_Sale-order": {
+            "get": {
+                "summary": "Get the Total Product Sale Order",
+                "description": "Get the Total Product Sale Order",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [ 
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/total_Product_Sale-order"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/order/get-total_User_Sale/{user_Id}": {
+            "get": {
+                "summary": "Get Total User Sale",
+                "description": "Get Total User Sale",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                   
+                    {
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/total_User_Sale"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+
+        "/order/update-order/{order_Id}": {
+            "put": {
+                "summary": "Update Order Status",
+                "description": "Update Order ",
+                "produces": [
+                    "application/json"
+                ], 
+                "consumes": ["application/json"],
+                "requestBody": true,
+                "parameters": [{
+                        "name": "updateData",
+                        "in": "body",
+                        "description": " body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example" : "delivered"
+                                }
+                            }                        
+                        }
+                    },
+                    {
+                        "name": "order_Id",
+                        "in": "path",
+                        "description": "order_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/update-order_user"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/order/update-order_user/{user_Id}/{order_Id}": {
+            "put": {
+                "summary": "Update Order Ststus By User",
+                "description": "Update Order ",
+                "produces": [
+                    "application/json"
+                ], 
+                "consumes": ["application/json"],
+                "requestBody": true,
+                "parameters": [{
+                        "name": "user_Id",
+                        "in": "path",
+                        "description": "user_Id",
+                        "required": true,
+                        "type": "string"
+                    },{
+                        "name": "order_Id",
+                        "in": "path",
+                        "description": "order_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation ",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/update-order_user"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        },
+        
+        "/order/delete-order/{order_Id}": {
+            "delete": {
+                "summary": "Delete the Order",
+                "description": "Delete the Order",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "order_Id",
+                        "in": "path",
+                        "description": "order_Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/deleteResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        }
+
+    },
+
+    "definitions": {
+
+        "registerResponse": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "example": "true"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Success"
+                },
+                "data": {
+                    "type": "object",
+                   
+                        "properties": {
+                            "profile": {
+                                "type": "string",
+                                "example": "customer"
+                            },
+                            "userName": {
+                                "type": "string",
+                                "example": "Aditi"
+                            },
+                            "email": {
+                                "type": "String",
+                                "example": "aditi@gamil.com"
+                            },
+
+                            "password": {
+                                "type": "String",
+                                "example": "dhjizs1"
+                            },
+
+                            "address": {
+                                "type": "Number",
+                                "example": "kanpur"
+                            },
+                            "createdAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" },
+                            "updatedAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" }
+                        }
+                
+                    
+                   }
+            }
+        },
+
+        "loginResponse": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "example": "true"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Author login successfully"
+                },
+                "userId": {
+                    "type": "string",
+                    "example": "658bccb4f94d9657c973c8e4"
+                },
+                "data": {
+                    "type": "object",
+                   
+                        "properties": {
+                            "token": {
+                                "type": "string",
+                                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JJZCI6IjY1ODNjZjk1YzYxMzE5NDk2ZWFhYjQ4NiIsImlhdCI6MTcwMzEzODY2Mn0.Eg7AYd3U-O7a1Gb9dt2LrQeOqbp4JS0UvQwVPrjC7Fk"
+                            }
+                        }
+                
+                    
+                   }
+            }
+        },
+
+        "productResponse": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "example": "true"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Success"
+                },
+                "data": {
+                    "type": "object",
+                   
+                        "properties": {
+                            "product_Name": {
+                                "type": "string",
+                                "example": "mobile"
+                            },
+                            "description": {
+                                "type": "String",
+                                "example": "very good phone"
+                            },
+
+                            "category": {
+                                "type": "String",
+                                "example": "tab"
+                            },
+
+                            "price": {
+                                "type": "Number",
+                                "example": "5400"
+                            },
+
+                            "stock": {
+                                "type": "Number",
+                                "example": "57"
+                            },
+                        
+                            "image_URL": {
+                                "type": "String",
+                                "example": "mobile"
+                            },
+                            "createdAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" },
+                            "updatedAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" }
+                        }
+                
+                    
+                }
+            }
+        },
+
+        "orderResponse": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "example": "true"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Success"
+                },
+                "data": {
+                    "type": "object",                  
+                        "properties": {
+                            "userId": {
+                                "type": "string",
+                                "example": "mobile"
+                            },
+                            "productId": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "example": "658be1b47d2f886a923c69b5"
+                                }
+                              },
+                              "quantity": {
+                                "type": "number",
+                                "example": 3
+                              },
+                              "shipping_address": {
+                                "type": "string",
+                                "example": "lucknow"
+                              },
+                              "status": {
+                                "type": "string",
+                                "example": "pending"
+                              },
+                              "isDeleted": {
+                                "type": "boolean",
+                                "example": false
+                              },
+                              "_id": {
+                                "type": "string",
+                                "example": "658e45d7911973e54d3cfb73"
+                              },
+                            "createdAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" },
+                            "updatedAt": { "type": "string", "format": "date-time", "example": "2023-11-30T07:52:22.910Z" }
+                        }
+                
+                    
+                }
+            }
+        },
+
+        "deleteResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "example": "Deleted successfully"
+                },
+                "Session": {
+                    "type": "object",
+                    "properties": {
+                        "acknowledged": {
+                            "type": "string",
+                            "example": "true"
+                        },
+                        "deletedCount": {
+                            "type": "number",
+                            "example": "2"
+                        }
+                    }
+                }
+            }
+        },
+
+        "total_User_Sale": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "example": "true"
+              },
+              "message": {
+                "type": "string",
+                "example": "Success"
+              },
+              "data": {
+                "type": "object",
+                "properties": {
+                  "user_Id": {
+                    "type": "string",
+                    "example": "658c533941d730477b31529b"
+                  },
+                  "total_Sale": {
+                    "type": "number",
+                    "example": 53
+                  },
+                  "total_Cancelled": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "total_Delivered": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "Product_bar": {
+                    "type": "object",
+                    "properties": {
+                      "Toy": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Bottle": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 8
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "mobile": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "mobiole ty": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 5
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "status_bar": {
+                    "type": "object",
+                    "properties": {
+                      "pending": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Order_Status": {
+                                    "type": "number",
+                                    "example": 52
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "cancelled": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Order_Status": {
+                                    "type": "number",
+                                    "example": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+
+        "total_Product_Sale-order": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "example": "true"
+              },
+              "message": {
+                "type": "string",
+                "example": "Success"
+              },
+              "data": {
+                "type": "object",
+                "properties": {
+                  "total_Sale": {
+                    "type": "number",
+                    "example": 53
+                  },
+                  "Product_bar": {
+                    "type": "object",
+                    "properties": {
+                      "Toy": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Bottle": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 8
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "mobile": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "mobiole ty": {
+                        "type": "object",
+                        "properties": {
+                          "2023": {
+                            "type": "object",
+                            "properties": {
+                              "dec": {
+                                "type": "object",
+                                "properties": {
+                                  "total_Product_Order": {
+                                    "type": "number",
+                                    "example": 5
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                 
+                }
+              }
+            }
+        },
+
+        "update-order_user": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "boolean",
+                "example": true
+              },
+              "message": {
+                "type": "string",
+                "example": "Order canceled successfully and email sent"
+              },
+              "data": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string",
+                    "example": "658d269add8884cd6a415953"
+                  },
+                  "userId": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string",
+                        "example": "658c533941d730477b31529b"
+                      },
+                      "userName": {
+                        "type": "string",
+                        "example": "Sagarsss"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "prachisingh281599@gmail.com"
+                      },
+                      "address": {
+                        "type": "string",
+                        "example": "13/17 colonel ganj kanpur"
+                      }
+                    }
+                  },
+                  "productId": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "658be1b47d2f886a923c69b5"
+                        },
+                        "product_Name": {
+                          "type": "string",
+                          "example": "Bottle"
+                        },
+                        "category": {
+                          "type": "string",
+                          "example": "milton"
+                        },
+                        "price": {
+                          "type": "number",
+                          "example": 800
+                        },
+                        "image_URL": {
+                          "type": "string",
+                          "example": "bbmobile"
+                        }
+                      }
+                    }
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "example": 78
+                  },
+                  "shipping_address": {
+                    "type": "string",
+                    "example": "j"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "cancelled"
+                  },
+                  "isDeleted": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-12-28T07:41:14.562Z"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-12-28T07:45:08.643Z"
+                  },
+                  "__v": {
+                    "type": "number",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          },
+
+        "InvalidResponse": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "Number",
+                    "example": "400"
+                   
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
