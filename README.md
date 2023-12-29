@@ -40,7 +40,10 @@ https://documenter.getpostman.com/view/29908963/2s9YkuaeP1
 
 ```
 
-
+# versel url 
+```bash
+https://vercel.com/new/prachi3649s-projects
+```
 # Note :- Don't delete this user Id from the DataBase 
 
 - Admin login credentials :-
