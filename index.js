@@ -18,6 +18,10 @@ app.use(limiter)
 
 fs = require('fs');
 
+app.use("/test" , (req, res) => {
+  res.send("versel running ...");
+})
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const customCss = fs.readFileSync((process.cwd()+"/swagger.css"), 'utf8');
