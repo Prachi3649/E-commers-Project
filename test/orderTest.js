@@ -302,23 +302,7 @@ describe(" Order API testing ", () => {
                     }
                 });
         });
-        // it("DELETE product_Id not found ", (done) => {
-        //     const order_Id = "6583cb00a001ca63c74fbce0";  // Id is not correct
-        //     chai.request(server)
-        //         .delete("/api/v1/order/delete-order/" + order_Id)
-        //         .end((err, response) => {
-        //             try {
-        //                 console.log("ress", response.body);
-
-        //                 response.should.have.status(400);
-        //                 response.body.should.have.property('message').eq('product Not Found');
-
-        //                 done();
-        //             } catch (error) {
-        //                 done(error);
-        //             }
-        //         });
-        // });
+     
     });
 
 });

@@ -60,7 +60,6 @@ module.exports.get_all_order = async (req, res) => {
     try {
 
         let data = req.query;
-        console.log("data", data);
 
         if (req.query) {
             const { userId, status } = req.query;

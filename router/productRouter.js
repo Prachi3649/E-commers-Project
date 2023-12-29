@@ -23,20 +23,4 @@ router.put("/product/update-product/:product_Id" , middleware.Authorization,  pr
 router.delete("/product/delete-product/:product_Id" , middleware.Authorization,  productController.delete_product);    // only admin Access
 
 
-
-// it check that you provide correct url (like delete , put ) && if you not provide user_Id in params
-// router.get("*", (req, res) => {
-//     return res.status(404).send({status: false, message: "Please select correct (url or route) page not found"})
-// })
-// router.post("*", (req, res) => {
-//     return res.status(404).send({status: false, message: "Please select correct (url or route) page not found"})
-// })
-// router.put("*", (req, res) => {
-//     return res.status(404).send({status: false, message: "Please select correct (url or route) page not found"})
-// })
-// router.delete("*", (req, res) => {
-//     return res.status(404).send({status: false, message: "Please select correct (url or route) page not found"})
-// })
-
-
 module.exports = router;

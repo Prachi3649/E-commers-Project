@@ -189,7 +189,6 @@ module.exports.update_user = async (req, res) => {
         }
 
         // address
-        // if (validator.isValid(address)) {
             updateUserData['address'] = address;
         
 

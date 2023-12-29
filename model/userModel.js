@@ -1,23 +1,14 @@
 const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema({
-
-    // name, email, password, and address
-
     profile: {
         type: String,
-        default :'customer'
+        default: 'customer'
     },
     userName: {
         type: String,
         require: true
     },
-    orders :[ {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Order",
-        required: true
-    }],
-
     email: {
         type: String,
         // unique : true,
@@ -30,7 +21,12 @@ const userSchema = new mongoose.Schema({
     address: {
         type: String,
         require: true
-    }
+    },
+    orders: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order",
+        required: true
+    }],
 
 
 }, { timestamps: true });

@@ -2,9 +2,6 @@
 const mongoose = require("mongoose")
 
 const productSchema = new mongoose.Schema({
-
-    // name, description, category, price, stock, and image URL)
-
     product_Name: {
         type: String,
     },
@@ -22,8 +19,6 @@ const productSchema = new mongoose.Schema({
     image_URL: {
         type: String,
     }
-
-
 
 }, { timestamps: true });
 
