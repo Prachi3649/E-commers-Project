@@ -1,72 +1,69 @@
-[# Introduction
-This Spring Boot project integrates Redis Cache, MySQL, AWS SNS, and AWS SES to demonstrate how to use these services together in a Java web application. Redis Cache is used for caching data, MySQL is used for storing persistent data, AWS SNS is used for sending push notifications, and AWS SES is used for sending emails.
-# Prerequisites
-- IntelliJ IDEA
-- Java 11 or higher
-- Maven 3.6 or higher
-- Redis server installed and running on your local machine or in the cloud
-- MySQL server installed and running on your local machine or in the cloud
-- AWS account with access to SNS and SES services
-# Checking out and building
-To check out the project and build it from source, do the following:
-```sh 
-git clone https://github.com/vaibhavmasaye/Ecommerce_Project.git
-cd Ecommerce_Project
-./mvnw package
+
+#  E-commers project
+
+# step:1
+- command to install all package  which is required for the project
+```bash
+ npm i  
 ```
-##### Open this project in IntelliJ IDEA
-To build and install jars into your local Maven cache:
-```sh 
-./mvnw install
+# step:2
+ - command to run the server
+```bash
+ npm start 
 ```
 
-#### For faster builds, we recommend using Maven Daemon and using following commands:
-Build:
-```sh 
-make build
-```
-Clean:
-```sh 
-make clean
-```
-Format code:
-```sh 
-make format
-```
-# Redis Cache
-This project uses Redis cache to improve performance and reduce load on the MySQL database. The Spring Data Redis module is used to implement Redis cache functionality. The RedisCacheManager is configured to manage the cache and the @Cacheable annotation is used to mark methods that should be cached.
 
-# AWS SNS
-This project uses AWS SNS to send notifications to subscribed endpoints. The AWS SDK for Java is used to interact with the SNS service. The AmazonSNS client is configured in the SNSConfig class.
-
-# AWS SES
-This project uses AWS SES to send emails. The AWS SDK for Java is used to interact with the SES service. The AmazonSimpleEmailService client is configured in the SESConfig class.
-
-#### Run to build the project and download the required dependencies.
-```sh 
-mvn clean install 
-```
-## Usage
-
-Run start the application.
-```sh
-mvn spring-boot:run
+# Start the Swagger 
+- command to start the Swagger 
+```bash
+ npm start 
 ```
 
-## Endpoints
-```sh
-- POST GET PUT DELETE 
-/api/product - Starting Point For Product .
-```
-```sh
-- POST GET PUT DELETE 
-/api/users - Starting Point For Product .
+- url to see the Swagger in browser
+```bash
+http://localhost:7065/api-Ecomm/#/
 ```
 
-### E-commerce API Documentation
-
-```sh
-https://documenter.getpostman.com/view/26447359/2s93RNwtbK
+# Unit test 
+-  Run unit tests:
+# command 
+```bash
+ npm test
 ```
 
-](https://github.com/Prachi3649/E-commers-Project.git)https://github.com/Prachi3649/E-commers-Project.git
+
+# Postman collection name
+- Collection Name: E-commerce
+
+```bash
+https://documenter.getpostman.com/view/29908963/2s9YkuaeP1
+
+```
+
+
+# Note :- Don't delete this user Id from the DataBase 
+
+- Admin login credentials :-
+-    userId = 658be8420de2bebada7615e8  // this is admin id 
+```bash
+{
+    _id: 658be8420de2bebada7615e8
+  "profile": "admin",
+  "userName": "Prachi",
+  "email": "prachisingh281599@gmail.com",
+  "password": "dhjizs1@aditi",
+  "address": " 13/17 colonel ganj kanpur"
+}
+```
+        
+# Customer login credentials :-
+-   userId = 658bcd86f94d9657c973c8e9  // this is customer id
+```bash
+{
+    _id: 658bcd86f94d9657c973c8e9
+  "userName": "Sagarsss",
+ "email": "prachi1731058@akgec.ac.in",
+  "password": "dhjizs1@aditi",
+  "address": " 13/17 colonel ganj kanpur"
+}
+```
