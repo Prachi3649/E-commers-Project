@@ -117,8 +117,8 @@
         },
         "/get/user/{user_Id}": {
             "get": {
-                "summary": "Get user",
-                "description": "Get user",
+                "summary": "Get user ",
+                "description": "Get user ",
                 "produces": [
                     "application/json"
                 ],
@@ -160,8 +160,8 @@
 
         "/update/user/{user_Id}": {
             "put": {
-                "summary": "Update user",
-                "description": "Update user ",
+                "summary": "Update user  ",
+                "description": "Update user (Both User, Admin )",
                 "produces": [
                     "application/json"
                 ], 
@@ -230,8 +230,8 @@
 
         "/delete/user/{user_Id}": {
             "delete": {
-                "summary": "Delete user",
-                "description": "Delete user",
+                "summary": "Delete user ",
+                "description": "Delete user ",
                 "produces": [
                     "application/json"
                 ],
@@ -274,8 +274,8 @@
 
         "/add-product/product": {
             "post": {
-                "summary": "Save the Product",
-                "description": "Create the Product ",
+                "summary": "Save the Product ( Only Admin)",
+                "description": "Create the Product ( Only Admin)",
                 "produces": [
                     "application/json"
                 ],
@@ -350,7 +350,7 @@
 
         "/product/get-all-product": {
             "get": {
-                "summary": "Get All  Product",
+                "summary": "Get All  Product ",
                 "description": "Get All  Product !!!",
                 "produces": [
                     "application/json"
@@ -452,8 +452,8 @@
 
         "/product/update-product/{product_Id}": {
             "put": {
-                "summary": "Update the Product",
-                "description": "Update the Product ",
+                "summary": "Update the Product ( Only Admin)",
+                "description": "Update the Product ( Only Admin)",
                 "produces": [
                     "application/json"
                 ], 
@@ -538,8 +538,8 @@
 
         "/product/delete-product/{product_Id}": {
             "delete": {
-                "summary": "Delete the product",
-                "description": "Delete the product",
+                "summary": "Delete the product ( Only Admin)",
+                "description": "Delete the product ( Only Admin) ",
                 "produces": [
                     "application/json"
                 ],
@@ -582,7 +582,7 @@
 
         "/create/order/add-order/{user_Id}": {
             "post": {
-                "summary": "Save the Order",
+                "summary": "Save the Order ",
                 "description": "Create the Order ",
                 "produces": [
                     "application/json"
@@ -650,7 +650,7 @@
         "/order/get-all-order": {
             "get": {
                 "summary": "Get All  Order",
-                "description": "Get All  Order !!!",
+                "description": "Get All  Order",
                 "produces": [
                     "application/json"
                 ],
@@ -751,8 +751,8 @@
 
         "/order/get-total_Product_Sale-order": {
             "get": {
-                "summary": "Get the Total Product Sale Order",
-                "description": "Get the Total Product Sale Order",
+                "summary": "Get the Total Product Sale Order (Only Admin)",
+                "description": "Get the Total Product Sale Order (Only Admin)",
                 "produces": [
                     "application/json"
                 ],
@@ -833,8 +833,8 @@
 
         "/order/update-order/{order_Id}": {
             "put": {
-                "summary": "Update Order Status",
-                "description": "Update Order ",
+                "summary": "Update Order Status (Only Admin)",
+                "description": "Update Order (Only Admin)",
                 "produces": [
                     "application/json"
                 ], 
@@ -892,8 +892,8 @@
 
         "/order/update-order_user/{user_Id}/{order_Id}": {
             "put": {
-                "summary": "Update Order Ststus By User",
-                "description": "Update Order ",
+                "summary": "Update Order Ststus By User ",
+                "description": "Update Order",
                 "produces": [
                     "application/json"
                 ], 
@@ -941,8 +941,8 @@
         
         "/order/delete-order/{order_Id}": {
             "delete": {
-                "summary": "Delete the Order",
-                "description": "Delete the Order",
+                "summary": "Delete the Order (Only Admin)",
+                "description": "Delete the Order (Only Admin)",
                 "produces": [
                     "application/json"
                 ],
