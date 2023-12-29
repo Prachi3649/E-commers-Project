@@ -40,9 +40,9 @@ https://documenter.getpostman.com/view/29908963/2s9YkuaeP1
 
 ```
 
-# versel url 
+# Deploy API end point 
 ```bash
-https://vercel.com/new/prachi3649s-projects
+e-commers-project-6yn3-eevcn9fn7-prachi3649s-projects.vercel.app
 ```
 # Note :- Don't delete this user Id from the DataBase 
 
