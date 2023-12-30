@@ -11,9 +11,9 @@ AWS_SDK_LOAD_CONFIG = 1
 
 // const REGION = "us-east-1";
 aws.config.update({
-  region: "us-east-1",
-  accessKeyId: "AKIAYWHJYBGFEXWVQ7MM",
-  secretAccessKey: "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",
+  region: "_____",
+  accessKeyId: "_______",
+  secretAccessKey: "______",
 });
 
 async function sendEmail(mailOptions) {
