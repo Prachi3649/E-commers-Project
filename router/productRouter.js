@@ -11,7 +11,9 @@ fs = require('fs');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
 const customCss = fs.readFileSync((process.cwd()+"/swagger.css"), 'utf8');
-
+router.get("/get",(req,res) => {
+    res.send("test vercel by thunder")
+})
 router.use('/api-Ecomm', swaggerUi.serve);
 router.get('/api-Ecomm', swaggerUi.setup(swaggerDocument, {customCss}));
 
@@ -22,7 +24,5 @@ router.get("/product/get-product/:product_Id",  productController.get_product_by
 router.put("/product/update-product/:product_Id" , middleware.Authorization,  productController.update_product_ById);  // only admin Access
 router.delete("/product/delete-product/:product_Id" , middleware.Authorization,  productController.delete_product);    // only admin Access
 
-router.get("/get",(req,res) => {
-    res.send("test vercel by thunder")
-})
+
 module.exports = router;
