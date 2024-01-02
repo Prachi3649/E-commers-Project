@@ -33,6 +33,7 @@ const SET_ASYNC = promisify(redisClient.set).bind(redisClient);
 const GET_ASYNC = promisify(redisClient.get).bind(redisClient);
 
 
+
 module.exports.add_product = async (req, res) => {
     try {
         const data = req.body
