@@ -42,7 +42,7 @@ https://documenter.getpostman.com/view/29908963/2s9YkuaeP1
 
 # Deploye API End Point in Vercel
 ```bash
-e-commers-project-m36ai6h1h-prachi3649s-projects.vercel.app
+https://ecommerce-project-nu-weld.vercel.app
 ```
 
 
